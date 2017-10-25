@@ -61,4 +61,4 @@ set showcmd
 
 set ts=4 sw=4
 
-
+set laststatus=2
