@@ -81,6 +81,7 @@ set statusline+=%h
 set statusline+=%w
 " これ以降は右寄せ表示
 set statusline+=%=
+set statusline+=%{fugitive#statusline()}
 set statusline+=[%Y]
 set statusline+=[%{&ff}]
 " file encoding
