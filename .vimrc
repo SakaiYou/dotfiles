@@ -23,10 +23,12 @@ if dein#load_state('~/.vim/dein')
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('scrooloose/nerdtree')
 "  call dein#add('vim-scripts/MultipleSearch')
+  call dein#add('tpope/vim-fugitive')
 
   " You can specify revision/branch/tag.
 "  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
+  call dein#add('chase/vim-ansible-yaml')
   " Required:
   call dein#end()
   call dein#save_state()
@@ -59,9 +61,32 @@ nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>
 " 実行中のコマンドを右下に表示
 set showcmd
 
-set ts=4 sw=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+set hidden
 
 set ambiwidth=double
+
+" ファイル名表示
+set statusline=%f
+" 変更チェック表示
+set statusline+=%m
+" 読み込み専用かどうか表示
+set statusline+=%r
+" ヘルプページなら[HELP]と表示
+set statusline+=%h
+" プレビューウインドウなら[Prevew]と表示
+set statusline+=%w
+" これ以降は右寄せ表示
+set statusline+=%=
+set statusline+=[%Y]
+set statusline+=[%{&ff}]
+" file encoding
+set statusline+=[%{&fileencoding}]
+" 現在行数/全行数
+set statusline+=[%l/%L,%c%5P]
 set laststatus=2
 
 "------------------------------------
